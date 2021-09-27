@@ -2,7 +2,7 @@
 number=[1,5,10,15,20,25,105,999]
 max=1
 for x in number:
-    if(x>max):
+    if x>max:
         max=x
 print('Максимальное число списка:',max)
 

@@ -1,0 +1,28 @@
+#TASK1 дано натуральное число, вычислить простое ли оно или составное
+
+number = int(input())
+
+for i in range (2, number):
+    if number % i == 0:
+        print ("Число не простое")
+        break
+    elif number // i == 1:
+        print ("Число простое")
+        break
+
+
+#TASK2 вывести все простые числа от 2 до n
+
+def simple(number):
+    for i in range (2, number):
+        if number % i == 0:
+            break
+        elif number // i == 1:
+            print (number)
+            break
+
+    
+print('Введите до какого n выводить простые числа')
+n = int(input())
+for i in range (2, n):
+    simple(i)

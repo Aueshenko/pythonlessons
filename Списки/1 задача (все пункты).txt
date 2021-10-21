@@ -1,0 +1,41 @@
+
+numbers = [1,2,3,4,5,6,7,8,9,10,0]
+
+def _max(mass):
+    max_number = mass[0]
+    for x in mass:
+        if x > max_number:
+            max_number = x
+    return max_number
+    
+def _sum(mass):
+    summa = 0
+    for x in mass:
+        summa += x
+    return summa
+
+def _average(mass):
+    summa = _sum(mass)
+    return summa / len(mass)
+
+def _mediana(mass):
+    center = 0
+    mass.sort()
+    if len(mass) % 2 == 0:
+        center = len(mass) / 2
+        return center
+    else:
+        return _average(mass)
+
+def _countzero(mass):
+    zero=0
+    for x in mass:
+        if x == 0:
+            zero+=1
+    return zero
+    
+print('Сумма элементов списка', _sum(numbers))
+print('Максимальный элемент списка', _max(numbers))
+print('Среднее арифметическое списка', _average(numbers))
+print('Медиана списка', _mediana(numbers))
+print('Количество нулей в списке', _countzero(numbers))

@@ -14,23 +14,30 @@ operation = ''
 result = 0
 
 while True:
-    
-    work = input()
 
+    work = input()
+    if work == 'q':
+        break
     for x in work:
         if x.isdigit() and operation == '':
             number1 += x
         elif x.isdigit() and operation != '':
             number2 += x
-        elif x in ['+','-','*','/']:
+        elif x in ['+', '-', '*', '/']:
             operation = x
         elif x == '_' and operation == '':
             number1 = result
         elif x == '_' and operation != '':
             number2 = result
-        
-    result = calculation(number1, number2, operation)
-    print('> ', result)
+        elif number1 != '' and number2 != '' and operation == '':
+            print('Введена неверная операция')
+
+    if number1 != '' and number2 == '' and operation == '':
+        print('Введена неизвестная операция, попробуйте заново')
+    else:
+        result = calculation(number1, number2, operation)
+        print('> ', result)
+
     number1 = ''
     number2 = ''
     operation = ''
